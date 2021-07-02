@@ -6,21 +6,12 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 09:13:02 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/02 09:24:22 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/02 10:18:45 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
- 
-#include <stdio.h>
+#include <unistd.h>
 
 void	ft_ft(int *nbr)
 {
 	*nbr = 42;
-}
-
-int main()
-{
-	int *a;
-	ft_ft(a);
-	printf("%d", *a);
-	return 0;
 }
