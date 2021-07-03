@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 11:20:04 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/03 12:27:55 by mmaric           ###   ########.fr       */
+/*   Created: 2021/07/03 12:09:09 by mmaric            #+#    #+#             */
+/*   Updated: 2021/07/03 12:23:15 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_ultimate_div_mod(int	*a,	int	*b)
 {
-	*div = a / b;
-	*mod = a % b;
+	int	div;
+	int	mod;
+
+	div = *a / *b;
+	mod = *a % *b;
+	*a = div;
+	*b = mod;
 }
