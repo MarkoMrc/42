@@ -6,17 +6,22 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 12:23:46 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/03 12:30:46 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/04 15:38:23 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
 void	ft_putstr(char	*str)
 {
 	while (*str != '\0')
 	{
-		write(1, &str, 1);
+		ft_putchar(*str);
 		str++;
 	}
 }
