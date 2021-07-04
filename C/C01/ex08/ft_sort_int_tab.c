@@ -1,54 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 09:04:45 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/04 10:24:26 by mmaric           ###   ########.fr       */
+/*   Created: 2021/07/04 10:58:27 by mmaric            #+#    #+#             */
+/*   Updated: 2021/07/04 11:20:07 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_sort_int_tab(int	*tab, int	size)
 {
-	write(1, &c, 1);
-}
+	int	i;
+	int	j;
+	int	temp;
 
-void	ft_putcomb(int a, int b)
-{
-	ft_putchar('0' + a / 10);
-	ft_putchar('0' + a % 10);
-	write(1, " ", 1);
-	ft_putchar('0' + b / 10);
-	ft_putchar('0' + b % 10);
-}
-
-void	ft_putvir(void)
-{
-	write(1, ", ", 2);
-}
-
-void	ft_print_comb2(void)
-{
-	int	a;
-	int	b;
-
-	a = 0;
-	while (a <= 98)
+	i = 0;
+	j = i + 1;
+	while (i < size)
 	{
-		b = a + 1;
-		while (b <= 99)
+		if (tab[i] >= tab[j])
 		{
-			ft_putcomb(a, b);
-			if (a != 98 || b != 99)
-			{
-				ft_putvir();
-			}
-			b++;
+			temp = tab[i];
+			tab[i] = tab[j];
+			tab[j] = temp;
 		}
-		a++;
+		i++;
 	}
 }
