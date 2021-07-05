@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 12:19:30 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/05 11:54:57 by mmaric           ###   ########.fr       */
+/*   Created: 2021/07/04 13:50:06 by mmaric            #+#    #+#             */
+/*   Updated: 2021/07/04 17:36:20 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_str_is_alpha(char *str)
+char	*ft_strupcase(char	*tr)
 {
 	int	i;
-	int	r;
 
-	r = 0;
 	i = 0;
-	if (str[0] == '\0')
-		r = 1;
-	while (str[i])
+	while (str[i] > '97' || str[i] < '122')
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			r = 1;
-		}
-		else if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			r = 1;
-		}
-		else
-		{
-			r = 0;
-			break ;
-		}
+		str[i] = str[i] - '32';
 		i++;
-	}
-	return (r);
-}
