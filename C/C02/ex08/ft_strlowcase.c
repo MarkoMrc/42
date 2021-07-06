@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 12:43:35 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/05 16:11:22 by mmaric           ###   ########.fr       */
+/*   Created: 2021/07/04 13:50:06 by mmaric            #+#    #+#             */
+/*   Updated: 2021/07/05 14:23:45 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_str_is_numeric(char *str)
+char	*ft_strlowcase(char	*str)
 {
 	int	i;
 
-	r = 0;
 	i = 0;
-	if (str[i] == '\0')
-		r = 1;
 	while (str[i])
 	{
-		if (str[i] >= '0' && str[i] <= '9')
+		if (str[i] >= 'A' && str[i] <= 'Z')
 		{
-			r = 1;
-		}
-		else
-		{
-			r = 0;
+			str[i] = str[i] + 32;
 		}
 		i++;
 	}
-	return (r);
+	return (str);
 }

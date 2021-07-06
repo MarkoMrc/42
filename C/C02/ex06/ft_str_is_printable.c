@@ -6,28 +6,31 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 13:17:42 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/04 13:19:14 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/05 14:18:30 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ftr_is_lowercase(char *str)
+int	ft_str_is_printable(char *str)
 {
 	int	i;
+	int	r;
 
+	r = 0;
 	i = 0;
-	while (str[i] || str[0] == '\0')
+	while (str[i])
 	{
-		if (str[i] >= '32' && str[i] <= '127')
+		if (!(str[i] >= ' ' && str[i] <= '~'))
 		{
-			return (1);
+			r = 0;
+			break ;
 		}
-		if (str[i] == '\0')
+		else
 		{
-			return (1);
+			r = 1;
 		}
 		i++;
 	}
-	return (0);
+	return (r);
 }

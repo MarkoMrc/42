@@ -6,28 +6,33 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 12:48:03 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/04 13:15:38 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/05 13:23:48 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ftr_is_lowercase(char *str)
+int	ft_str_is_lowercase(char *str)
 {
 	int	i;
+	int	r;
 
 	i = 0;
-	while (str[i] || str[0] == '\0')
+	r = 0;
+	if (str[0] == '\0')
+		r = 1;
+	while (str[i])
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
 		{
-			return (1);
+			r = 1;
 		}
-		if (str[i] == '\0')
+		else
 		{
-			return (1);
+			r = 0;
+			break ;
 		}
 		i++;
 	}
-	return (0);
+	return (r);
 }

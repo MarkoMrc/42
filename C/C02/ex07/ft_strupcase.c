@@ -6,18 +6,24 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 13:50:06 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/04 17:36:20 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/05 14:20:53 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strupcase(char	*tr)
+char	*ft_strupcase(char	*str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] > '97' || str[i] < '122')
+	while (str[i])
 	{
-		str[i] = str[i] - '32';
+		if (str[i] >= 'a' && str[i] < 'z')
+		{
+			str[i] = str[i] - 32;
+		}
 		i++;
+	}
+	return (str);
+}
