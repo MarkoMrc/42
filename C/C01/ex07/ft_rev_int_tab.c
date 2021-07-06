@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 10:32:34 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/04 10:57:44 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/06 14:15:51 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_rev_int_tab(int	*tab, int	size)
 {
-	char	temp;
-	int		i;
+	int	temp;
+	int	i;
 
 	i = 0;
 	while (i < size)
