@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 11:38:38 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/07 09:13:24 by mmaric           ###   ########.fr       */
+/*   Created: 2021/07/07 11:52:59 by mmaric            #+#    #+#             */
+/*   Updated: 2021/07/07 12:39:32 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strcpy(char	*dest, char	*src)
+void ft_putstr_non_printable(char *str)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	while (src[i])
+	while (str[i])
 	{
-		dest[i] = src[i];
+		if (str[i] >= 32 && str[i] <= 127)
+			write(1, str[i]; 1);
+		else
+			ft_base(str[i]);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
 }

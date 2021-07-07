@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 11:38:38 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/07 09:13:24 by mmaric           ###   ########.fr       */
+/*   Created: 2021/07/06 11:42:39 by mmaric            #+#    #+#             */
+/*   Updated: 2021/07/07 11:50:51 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strcpy(char	*dest, char	*src)
+unsigned int	ft_strlcpy(char	*dest, char	*src, unsigned int	size)
 {
 	int	i;
 
 	i = 0;
+	if (src[i] == '\0' && dest[i] == '\0')
+		return (0);
+	if (size > 0)
+	{
+		while (size - 1 > 0 && src[i])
+		{
+			dest[i] = src[i];
+			i++;
+			size--;
+		}
+		dest[i] = '\0';
+	}
+	i = 0;
 	while (src[i])
 	{
-		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (i);
 }
