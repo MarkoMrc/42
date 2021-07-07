@@ -6,21 +6,35 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 11:52:59 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/07 12:39:32 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/07 15:43:59 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-void ft_putstr_non_printable(char *str)
+void	ft_putchar(char c)
 {
-	int i;
+	write(1, &c, 1);
+}
 
+void	ft_putstr_non_printable(char *str)
+{
+	unsigned int	i;
+	unsigned int	value;
+	char			*hexa;
+
+	hexa = "0123456789abcdef";
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
 	{
-		if (str[i] >= 32 && str[i] <= 127)
-			write(1, str[i]; 1);
+		if (str[i] < 31 || str[i] > 127)
+		{
+			value = str[i];
+			ft_putchar('\\');
+			ft_putchar(hexa[((unsigned char)value) / 16]);
+			ft_putchar(hexa[((unsigned char)value) % 16]);
+		}
 		else
-			ft_base(str[i]);
+			ft_putchar(str[i]);
 		i++;
 	}
 }

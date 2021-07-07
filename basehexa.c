@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   basehexa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 12:43:35 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/07 15:50:27 by mmaric           ###   ########.fr       */
+/*   Created: 2021/07/07 15:34:40 by mmaric            #+#    #+#             */
+/*   Updated: 2021/07/07 15:46:40 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
 
-int	ft_str_is_numeric(char *str)
+void	ft_putchar(char c)
 {
-	int	i;
-	int	r;
+	write(1, &c, 1);
+}
 
-	r = 0;
+void	basehexa(char *str)
+{
+	unsigned int	i;
+	unsigned int	value;
+	char			*hexa;
+
+	hexa = "0123456789abcdef";
 	i = 0;
-	if (str[i] == '\0')
-		r = 1;
-	while (str[i])
+	while (str[i] != '\0')
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-		{
-			r = 1;
-		}
-		else
-		{
-			r = 0;
-		}
-		i++;
+		value = str[i];
+		ft_putchar(hexa[(((unsigned char)value) / 16)]);
+		ft_putchar(hexa[(((unsigned char)value) % 16)]);
 	}
-	return (r);
 }

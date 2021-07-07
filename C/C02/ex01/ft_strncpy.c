@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 11:51:38 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/07 10:22:39 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/07 14:00:11 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncpy(char	*dest, char	*src, unsigned int	n)
 {
-	unssigned int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < n && src[i])
