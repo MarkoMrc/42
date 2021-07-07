@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 11:52:59 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/07 15:43:59 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/07 18:57:27 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -26,7 +26,7 @@ void	ft_putstr_non_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 31 || str[i] > 127)
+		if (str[i] < 32 || str[i] > 127)
 		{
 			value = str[i];
 			ft_putchar('\\');

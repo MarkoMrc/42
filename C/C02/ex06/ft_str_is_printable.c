@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 13:17:42 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/05 14:18:30 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/07 18:36:39 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	ft_str_is_printable(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!(str[i] >= ' ' && str[i] <= '~'))
+		// table etendue + unsigned char
+		if (!(str[i] >= 32  && str[i] <= 127))
 		{
 			r = 0;
 			break ;
@@ -29,6 +30,7 @@ int	ft_str_is_printable(char *str)
 		else
 		{
 			r = 1;
+			break ;
 		}
 		i++;
 	}
