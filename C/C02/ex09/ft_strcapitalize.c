@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 16:14:21 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/07 18:55:59 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/08 09:49:37 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strcapitalize(char	*str)
 				str[i] = str[i] - 32;
 			else if (str[i - 1] > 90 && str[i - 1] < 97)
 				str[i] = str[i] - 32;
-			else if (str[i - 1] > 122)
+			else if (str[i - 1] > 122 && str[i - 1] < 127)
 				str[i] = str[i] - 32;
 		}
 		i++;

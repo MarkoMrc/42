@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 13:17:42 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/07 18:36:39 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/08 09:42:01 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,20 @@ int	ft_str_is_printable(char *str)
 
 	r = 0;
 	i = 0;
+	if (str[0] == '\0')
+	{
+		r = 1;
+		break ;
+	}
 	while (str[i])
 	{
-		// table etendue + unsigned char
-		if (!(str[i] >= 32  && str[i] <= 127))
+		if (str[i] > 31 && str[i] < 127)
 		{
-			r = 0;
-			break ;
+			r = 1;
 		}
 		else
 		{
-			r = 1;
+			r = 0;
 			break ;
 		}
 		i++;
