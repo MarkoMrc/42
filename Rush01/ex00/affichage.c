@@ -1,47 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   affichage.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: vnafissi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 11:17:08 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/09 12:56:25 by mmaric           ###   ########.fr       */
+/*   Created: 2021/07/11 12:00:46 by vnafissi          #+#    #+#             */
+/*   Updated: 2021/07/11 12:05:25 by vnafissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
-
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void	affichage_tableau(int *tab)
 {
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}
-	if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	if (nb <= 9)
-	{
-		ft_putchar(nb + 48);
-	}
-}
+	int	i;
 
-int main ()
-{
-	ft_putnbr(687546);
-	ft_putnbr(-564);
-	ft_putnbr(214783647);
+	i = 0;
+	while (i < 16)
+	{
+		ft_putchar(tab[i] + '0');
+		i++;
+		if (i != 4 && i != 8 && i != 12 && i != 16)
+		{
+			ft_putchar(' ');
+		}	
+		if (i == 4 || i == 8 || i == 12 || i == 16)
+		{
+			ft_putchar('\n');
+		}
+	}
 }
