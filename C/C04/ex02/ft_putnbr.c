@@ -6,18 +6,18 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 09:52:23 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/09 11:34:08 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/12 10:24:19 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
 		write(1, "-2147483648", 11);
