@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 12:57:27 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/06 13:01:49 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/13 20:02:35 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,24 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int main(int	argc, char	*argv[])
+int	main(int	argc, char	**argv)
 {
-	int i;
+	int	i;
 	int	j;
 
 	j = 1;
-	if (argc > 0)
+	if (argc > 1)
 	{
-		i = 0;
-		while (argv[j][i] != '\0')
+		while (j < argc)
 		{
-			while (argv[j][i] != '\0')
+			i = 0;
+			while (argv[j][i])
 			{	
-				ft_putchar(argv[0][i]);
+				ft_putchar(argv[j][i]);
 				i++;
 			}
-			ft_putchar('\n');
 			j++;
+			ft_putchar('\n');
 		}
 	}
-	return (0);
 }

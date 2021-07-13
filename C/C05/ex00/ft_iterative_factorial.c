@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 11:41:27 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/13 11:57:11 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/13 19:51:38 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@ int	ft_iterative_factorial(int	nb)
 	int	fact;
 	int	i;
 
-	fact = 1
-		i = 1;
-	if (nb = 0)
+	fact = 1;
+	i = 1;
+	if (nb == 0)
 		return (fact);
 	else if (nb >= 1)
 	{

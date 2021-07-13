@@ -1,45 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/13 17:12:28 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/13 19:54:14 by mmaric           ###   ########.fr       */
+/*   Created: 2021/07/13 18:53:10 by mmaric            #+#    #+#             */
+/*   Updated: 2021/07/13 20:03:43 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int	nb)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 2;
-	if (nb < 0)
-		return (0);
-	if (nb == 0 || nb == 1)
-		return (0);
-	if (nb == 2)
-		return (1);
-	while (i < nb)
-	{
-		if (nb % i == 0)
-			return (0);
-		i++;
-	}
-	return (1);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
 
-int	ft_find_next_prime(int	nb)
+int	main(int	argc, char	**argv)
 {
-	if (nb <= 2)
-		return (2);
-	if (ft_is_prime(nb) == 1)
-		return (nb);
-	while (nb++)
+	int	i;
+	int	j;
+
+	j = argc - 1;
+	if (argc > 1)
 	{
-		if (ft_is_prime(nb) == 1)
-			return (nb);
+		while (j > 0)
+		{
+			i = 0;
+			while (argv[j][i])
+			{
+				ft_putchar(argv[j][i]);
+				i++;
+			}
+			j--;
+			ft_putchar('\n');
+		}
 	}
-	return (0);
 }

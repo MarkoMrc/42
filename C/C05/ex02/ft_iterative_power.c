@@ -6,14 +6,14 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:44:19 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/13 14:12:55 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/13 19:52:04 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_iterative_power(int	nb, int	power)
 {
-	int i;
-	
+	int	i;
+
 	i = 1;
 	if (power < 0)
 		return (0);
