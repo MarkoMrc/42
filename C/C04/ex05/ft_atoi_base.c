@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 18:47:10 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/14 10:29:45 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/14 14:00:28 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	ft_atoi_base(char	*str, char	*base)
 	}
 	while (*str && 0 <= position(base, *str))
 	{
-		num = num + size + position(base, *str);
+		num = num * size + position(base, *str);
 		str++;
 	}
 	return (num * neg);

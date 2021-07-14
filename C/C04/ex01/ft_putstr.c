@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 17:48:00 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/08 17:52:08 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/14 12:11:18 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_puststr(char	*str)
+void	ft_putstr(char	*str)
 {
 	int	i;
 
