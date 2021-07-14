@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 14:52:18 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/14 14:01:05 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/14 16:18:06 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,23 +69,25 @@ int	check_base(char	*str)
 
 void	ft_putnbr_base(int nbr, char	*base)
 {
-	int	n[100];
-	int	size;
-	int	i;
+	long int		nb;
+	int				n[100];
+	int				size;
+	int				i;
 
+	nb = nbr;
 	i = 0;
 	if (check_base(base) == 1)
 	{
 		size = ft_strlen(base);
-		if (nbr < 0)
+		if (nb < 0)
 		{
 			ft_putchar('-');
-			nbr = nbr * -1;
+			nb = nb * -1;
 		}
-		while (nbr)
+		while (nb)
 		{
-			n[i] = nbr % size;
-			nbr = nbr / size;
+			n[i] = nb % size;
+			nb = nb / size;
 			i += 1;
 		}
 		while (i > 0)
