@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 10:37:29 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/14 11:44:06 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/14 15:09:57 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,37 +29,22 @@ int	ft_strcmp(char	*s1, char	*s2)
 	return (s1[i] - s2[i]);
 }
 
-int	ft_sort_param(int	argc, char	**argv)
+void	ft_sort_param(int	size, char	**tab)
 {
-	int	i;
-	int	j;
+	int		i;
 	char	*temp;
 
-	while (j < argc)
+	while (i < size - 1)
 	{
-		j = 1;
-
-		while (i < argc)
+		if (ft_strcmp(tab[i], tab[i + 1]) > 0)
 		{
-			i = j + 1;
-
-			if (ft_strcmp(argv[j], argv[i]) < 0)
-			{
-				temp = argv[i];
-				argv[i] = argv[j];
-				argv[j] = temp;
-				j = 1;
-				i = j + 1;
-			}
-			else
-			{
-				i++;
-				j++;
-			}
-			i++;
+			temp = tab[i];
+			tab[i] = tab[i + 1];
+			tab[i + 1] = temp;
+			i = 0;
 		}
+		i++;
 	}
-	return(**argv);
 }
 
 int	main(int	argc, char	**argv)
@@ -83,4 +68,5 @@ int	main(int	argc, char	**argv)
 			ft_putchar('\n');
 		}
 	}
+	return (0);
 }
