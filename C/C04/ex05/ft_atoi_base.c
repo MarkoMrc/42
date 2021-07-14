@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 18:47:10 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/12 20:26:37 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/14 10:29:45 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,16 @@ int	check_base(char	*str)
 	int	i;
 	int	j;
 
-	i = 0;
 	if (ft_strlen(str) == 0 || ft_strlen(str) == 1)
 		return (0);
 	if (checkchar(str) == 0)
 		return (0);
 	i = 0;
-	j = 0;
 	while (str[i])
 	{
+		j = j + 1;
 		while (str[j])
 		{
-			if (i == j)
-				j++;
 			if (str[i] == str[j])
 				return (0);
 			j++;
@@ -102,7 +99,7 @@ int	ft_atoi_base(char	*str, char	*base)
 	}
 	while (*str && 0 <= position(base, *str))
 	{
-		num = num * 10 + size + position(base, *str);
+		num = num + size + position(base, *str);
 		str++;
 	}
 	return (num * neg);

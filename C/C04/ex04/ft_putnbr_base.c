@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 14:52:18 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/14 09:27:02 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/14 10:18:43 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,11 @@ int	check_base(char	*str)
 	if (checkchar(str) == 0)
 		return (0);
 	i = 0;
-	j = 0;
 	while (str[i])
 	{
+		j = i + 1;
 		while (str[j])
 		{
-			if (i == j)
-				j++;
 			if (str[i] == str[j])
 				return (0);
 			j++;
