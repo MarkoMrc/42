@@ -6,7 +6,7 @@
 /*   By: mmaric <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 10:37:29 by mmaric            #+#    #+#             */
-/*   Updated: 2021/07/14 15:09:57 by mmaric           ###   ########.fr       */
+/*   Updated: 2021/07/16 11:52:37 by mmaric           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	ft_sort_param(int	size, char	**tab)
 	int		i;
 	char	*temp;
 
+	i = 1;
 	while (i < size - 1)
 	{
 		if (ft_strcmp(tab[i], tab[i + 1]) > 0)
